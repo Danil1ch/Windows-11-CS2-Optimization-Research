@@ -43,6 +43,26 @@ The useful work came from measuring the problem, changing one area at a time, an
 | Headset | Logitech G435 wireless |
 | Recording | NVIDIA Instant Replay / ShadowPlay, recording to HDD |
 
+### Tools used
+
+| Tool | Used for | Notes |
+| --- | --- | --- |
+| [LatencyMon](https://www.resplendence.com/latencymon) | DPC latency checks | Helped identify driver latency peaks such as `dxgkrnl.sys` and `nvlddmkm.sys`. |
+| [CapFrameX](https://github.com/CXWorld/CapFrameX/releases) | FPS, frametime, 1% low and 0.2% low measurements | Requires [.NET Desktop Runtime 9.0](https://dotnet.microsoft.com/en-us/download/dotnet/9.0). |
+| [MSI Utility v3](https://www.mediafire.com/file/ewpy1p0rr132thk/MSI_util_v3.zip) | MSI mode / interrupt priority tuning | Used only for the GPU and the correct USB controller. Do not set everything to High. |
+| [CRU / Custom Resolution Utility](https://github.com/kreier/cru/releases/) | Monitor refresh-rate testing | Used for the Redmi G24 180 Hz -> 200 Hz test. Keep `reset-all.exe` nearby. |
+| [NVIDIA Profile Inspector](https://github.com/Orbmu2k/nvidiaProfileInspector/releases) | NVIDIA profile inspection and tuning | Used for driver/profile-level checks. |
+| [MouseTester](https://github.com/dobragab/MouseTester) | Mouse polling stability checks | Helped compare wired vs wireless polling and receiver placement. |
+| [NVIDIA App / ShadowPlay](https://www.nvidia.com/en-us/software/nvidia-app/) | Instant Replay load tuning | Replay length and bitrate were reduced instead of disabling recording completely. |
+
+MSI Utility v3 checksum used in this research:
+
+```text
+c08d7ae2fff3052fd801f6bf33831d08
+```
+
+DDU, TestMem5, and Process Lasso were not part of this run, so they are not presented as required steps.
+
 ### Results
 
 | Metric | Before | After |
@@ -100,6 +120,26 @@ Average FPS barely changed. Smoothness improved because frametime stability, low
 | Мышь | ATTACK SHARK X3 wireless |
 | Гарнитура | Logitech G435 wireless |
 | Запись | NVIDIA Instant Replay / ShadowPlay, запись на HDD |
+
+### Использованные инструменты
+
+| Инструмент | Для чего использовался | Пометка |
+| --- | --- | --- |
+| [LatencyMon](https://www.resplendence.com/latencymon) | Проверка DPC latency | Помог увидеть пики драйверов вроде `dxgkrnl.sys` и `nvlddmkm.sys`. |
+| [CapFrameX](https://github.com/CXWorld/CapFrameX/releases) | Замеры FPS, frametime, 1% low и 0.2% low | Нужен [.NET Desktop Runtime 9.0](https://dotnet.microsoft.com/en-us/download/dotnet/9.0). |
+| [MSI Utility v3](https://www.mediafire.com/file/ewpy1p0rr132thk/MSI_util_v3.zip) | MSI mode / interrupt priority | Использовался только для GPU и правильного USB-контроллера. Не ставить High на всё подряд. |
+| [CRU / Custom Resolution Utility](https://github.com/kreier/cru/releases/) | Тест герцовки монитора | Использовался для Redmi G24 180 Гц -> 200 Гц. Перед экспериментами держать `reset-all.exe` рядом. |
+| [NVIDIA Profile Inspector](https://github.com/Orbmu2k/nvidiaProfileInspector/releases) | Проверка и настройка NVIDIA-профилей | Использовался для driver/profile-level проверок. |
+| [MouseTester](https://github.com/dobragab/MouseTester) | Проверка стабильности polling мыши | Помог сравнить проводной/беспроводной режим и понять проблему расположения ресивера. |
+| [NVIDIA App / ShadowPlay](https://www.nvidia.com/en-us/software/nvidia-app/) | Настройка нагрузки Instant Replay | Длина повтора и bitrate были снижены вместо полного отключения записи. |
+
+MD5 MSI Utility v3, использованный в расследовании:
+
+```text
+c08d7ae2fff3052fd801f6bf33831d08
+```
+
+DDU, TestMem5 и Process Lasso в этом прогоне не использовались, поэтому они не выдаются за обязательные шаги.
 
 ### Результаты
 

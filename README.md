@@ -236,6 +236,7 @@ reg query "HKLM\SYSTEM\CurrentControlSet\Control\GraphicsDrivers" /v HwSchMode
 
 <details>
 <summary><strong>Русский: полный список PowerShell / CMD / Registry команд</strong></summary>
+
 # PowerShell / CMD / Registry Commands — Windows 11 + CS2 Optimization
 
 **Назначение файла:** отдельный список команд из расследования Windows 11 25H2 + CS2: что команда делает, когда применять, что является опциональным/опасным и как откатить часть изменений.
@@ -2091,6 +2092,7 @@ reg query "HKLM\SYSTEM\CurrentControlSet\Control\GraphicsDrivers" /v HwSchMode
 
 <details>
 <summary><strong>English: full PowerShell / CMD / Registry command reference</strong></summary>
+
 # PowerShell / CMD / Registry Commands — Windows 11 + CS2 Optimization
 
 **Purpose:** a separate command reference from the Windows 11 25H2 + CS2 microstutter investigation.
